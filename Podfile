@@ -7,6 +7,11 @@ target 'NearMe' do
 
   # Pods for NearMe
   
+  pod 'IQKeyboardManagerSwift'
+  
+  pod 'SVProgressHUD'
+  
   pod 'Firebase/Core'
+  pod 'Firebase/Auth'
 
 end

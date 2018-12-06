@@ -7,16 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		330C236C21B9CCA5009C777D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330C236B21B9CCA5009C777D /* MainViewController.swift */; };
+		330C237121B9D5C2009C777D /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330C237021B9D5C2009C777D /* MainNavigationViewController.swift */; };
 		3379A35C21B960F300C4BF8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3379A35B21B960F300C4BF8B /* AppDelegate.swift */; };
 		3379A36121B960F300C4BF8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3379A35F21B960F300C4BF8B /* Main.storyboard */; };
 		3379A36321B960F300C4BF8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3379A36221B960F300C4BF8B /* Assets.xcassets */; };
 		3379A36621B960F300C4BF8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3379A36421B960F300C4BF8B /* LaunchScreen.storyboard */; };
 		33D094B021B961EF00D9E7A7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33D094AF21B961EF00D9E7A7 /* GoogleService-Info.plist */; };
+		33D094B221B9627A00D9E7A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D094B121B9627A00D9E7A7 /* LoginViewController.swift */; };
+		33D094B521B97C9600D9E7A7 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D094B421B97C9600D9E7A7 /* CustomButton.swift */; };
+		33D094B721B981A600D9E7A7 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D094B621B981A600D9E7A7 /* AccountController.swift */; };
+		33D094B921B982C800D9E7A7 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D094B821B982C800D9E7A7 /* StringUtils.swift */; };
+		33D094BB21B9854C00D9E7A7 /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D094BA21B9854C00D9E7A7 /* LoadingButton.swift */; };
+		33D094BD21B998EB00D9E7A7 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D094BC21B998EB00D9E7A7 /* SignUpViewController.swift */; };
 		781EAB703785F10B3403942E /* Pods_NearMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9939348A8A853C5022EE3321 /* Pods_NearMe.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		073FE6881F0F294EB85A0C67 /* Pods-NearMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-NearMe/Pods-NearMe.release.xcconfig"; sourceTree = "<group>"; };
+		330C236B21B9CCA5009C777D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		330C237021B9D5C2009C777D /* MainNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationViewController.swift; sourceTree = "<group>"; };
 		3379A35821B960F300C4BF8B /* NearMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3379A35B21B960F300C4BF8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3379A36021B960F300C4BF8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -24,6 +34,12 @@
 		3379A36521B960F300C4BF8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3379A36721B960F300C4BF8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33D094AF21B961EF00D9E7A7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		33D094B121B9627A00D9E7A7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		33D094B421B97C9600D9E7A7 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		33D094B621B981A600D9E7A7 /* AccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
+		33D094B821B982C800D9E7A7 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
+		33D094BA21B9854C00D9E7A7 /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
+		33D094BC21B998EB00D9E7A7 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		8238DD43CBCE12C97C8F86D4 /* Pods-NearMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NearMe/Pods-NearMe.debug.xcconfig"; sourceTree = "<group>"; };
 		9939348A8A853C5022EE3321 /* Pods_NearMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NearMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -40,6 +56,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		330C236D21B9D1B5009C777D /* Main storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				330C237021B9D5C2009C777D /* MainNavigationViewController.swift */,
+				33D094B121B9627A00D9E7A7 /* LoginViewController.swift */,
+				33D094BC21B998EB00D9E7A7 /* SignUpViewController.swift */,
+				330C236B21B9CCA5009C777D /* MainViewController.swift */,
+			);
+			path = "Main storyboard";
+			sourceTree = "<group>";
+		};
 		3379A34F21B960F300C4BF8B = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +102,8 @@
 		33D094AC21B9613A00D9E7A7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				33D094B621B981A600D9E7A7 /* AccountController.swift */,
+				33D094B821B982C800D9E7A7 /* StringUtils.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -84,6 +113,7 @@
 			children = (
 				3379A36421B960F300C4BF8B /* LaunchScreen.storyboard */,
 				3379A35F21B960F300C4BF8B /* Main.storyboard */,
+				330C236D21B9D1B5009C777D /* Main storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -91,8 +121,18 @@
 		33D094AE21B9614600D9E7A7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				33D094B321B97C8100D9E7A7 /* UIView */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		33D094B321B97C8100D9E7A7 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				33D094B421B97C9600D9E7A7 /* CustomButton.swift */,
+				33D094BA21B9854C00D9E7A7 /* LoadingButton.swift */,
+			);
+			path = UIView;
 			sourceTree = "<group>";
 		};
 		7A36225FD6CB06A53EB6D87A /* Frameworks */ = {
@@ -207,12 +247,18 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-NearMe/Pods-NearMe-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,7 +273,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33D094BB21B9854C00D9E7A7 /* LoadingButton.swift in Sources */,
+				33D094BD21B998EB00D9E7A7 /* SignUpViewController.swift in Sources */,
+				33D094B221B9627A00D9E7A7 /* LoginViewController.swift in Sources */,
+				33D094B921B982C800D9E7A7 /* StringUtils.swift in Sources */,
 				3379A35C21B960F300C4BF8B /* AppDelegate.swift in Sources */,
+				330C237121B9D5C2009C777D /* MainNavigationViewController.swift in Sources */,
+				330C236C21B9CCA5009C777D /* MainViewController.swift in Sources */,
+				33D094B521B97C9600D9E7A7 /* CustomButton.swift in Sources */,
+				33D094B721B981A600D9E7A7 /* AccountController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
