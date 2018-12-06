@@ -6,5 +6,7 @@ target 'NearMe' do
   use_frameworks!
 
   # Pods for NearMe
+  
+  pod 'Firebase/Core'
 
 end
