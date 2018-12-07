@@ -13,6 +13,28 @@ class AccountController {
     
     static let shared = AccountController()
     
+    func createNewAccount(email: String, password: String, onComplition: @escaping ((SignUpResult)->())){
+        Auth.auth().createUser(withEmail: email, password: password) { (authDataResult: AuthDataResult?, error: Error?) in
+            if authDataResult?.user != nil {
+                onComplition(.success)
+            } else {
+                guard let error = error, let errCode = AuthErrorCode(rawValue: error._code) else {
+                    onComplition(.unknownError)
+                    return
+                }
+                
+                switch errCode {
+                case .emailAlreadyInUse:
+                    onComplition(.emailInUse)
+                case .networkError:
+                    onComplition(.networkError)
+                default:
+                    onComplition(.unknownError)
+                }
+            }
+        }
+    }
+    
     func signIn(email: String, password: String, onComplition: @escaping ((SignInResult)->())){
         Auth.auth().signIn(withEmail: email, password: password) { (authDataResult: AuthDataResult?, error: Error?) in
             
@@ -39,8 +61,9 @@ class AccountController {
         }
     }
     
-    func createNewAccount(email: String, password: String, onComplition: @escaping ((SignUpResult)->())){
-        Auth.auth().createUser(withEmail: email, password: password) { (authDataResult: AuthDataResult?, error: Error?) in
+    func signInWithCredential(credential: AuthCredential, onComplition: @escaping ((SignInWithCredentialResult)->())){
+        Auth.auth().signInAndRetrieveData(with: credential) { (authDataResult: AuthDataResult?, error: Error?) in
+            
             if authDataResult?.user != nil {
                 onComplition(.success)
             } else {
@@ -50,14 +73,13 @@ class AccountController {
                 }
                 
                 switch errCode {
-                case .emailAlreadyInUse:
-                    onComplition(.emailInUse)
                 case .networkError:
                     onComplition(.networkError)
                 default:
                     onComplition(.unknownError)
                 }
             }
+            
         }
     }
     
@@ -71,6 +93,12 @@ class AccountController {
     }
 }
 
+enum SignUpResult {
+    case success
+    case emailInUse
+    case networkError
+    case unknownError
+}
 
 enum SignInResult {
     case success
@@ -80,9 +108,8 @@ enum SignInResult {
     case unknownError
 }
 
-enum SignUpResult {
+enum SignInWithCredentialResult {
     case success
-    case emailInUse
     case networkError
     case unknownError
 }

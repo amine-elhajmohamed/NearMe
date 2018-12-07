@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 class MainViewController: UIViewController {
 
@@ -16,6 +17,7 @@ class MainViewController: UIViewController {
     }
     
     override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        GIDSignIn.sharedInstance()?.signOut()
         AccountController.shared.logoutCurrentUser { (_) in            
             self.dismiss(animated: true, completion: nil)
         }

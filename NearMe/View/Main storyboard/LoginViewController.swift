@@ -8,6 +8,8 @@
 
 import UIKit
 import SVProgressHUD
+import FirebaseAuth
+import GoogleSignIn
 
 class LoginViewController: UIViewController {
 
@@ -36,6 +38,9 @@ class LoginViewController: UIViewController {
         btnSignInFacebook.isExclusiveTouch = true
         
         lblError.text = ""
+        
+        GIDSignIn.sharedInstance()?.uiDelegate = self
+        GIDSignIn.sharedInstance().delegate = self
     }
     
     /**
@@ -117,7 +122,8 @@ class LoginViewController: UIViewController {
                 navigationController?.pushViewController(signInVC, animated: true)
             }
         case btnSignInGoogle:
-            break
+            enableViewElements(enable: false)
+            GIDSignIn.sharedInstance()?.signIn()
         case btnSignInFacebook:
             break
         default:
@@ -131,4 +137,45 @@ class LoginViewController: UIViewController {
         }
     }
     
+}
+
+
+//MARK:- extension GIDSignInDelegate
+extension LoginViewController: GIDSignInDelegate {
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
+        guard error == nil else {
+            return
+        }
+        
+        guard let authentication = user.authentication else{
+            return
+        }
+        
+        SVProgressHUD.show(withStatus: "Loading...")
+        
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+        
+        AccountController.shared.signInWithCredential(credential: credential) { (result: SignInWithCredentialResult) in
+            switch result {
+            case .success:
+                SVProgressHUD.dismiss()
+                if let mainNavVC = self.navigationController as? MainNavigationViewController {
+                    mainNavVC.presentMainView(animated: true)
+                }
+            case .networkError:
+                SVProgressHUD.showError(withStatus: "No internet connection\n\nPlease check your internet connection and try again.")
+            case .unknownError:
+                SVProgressHUD.showError(withStatus: "An unknown error occurred, please try again later.")
+            }
+        }
+    }
+    
+}
+
+//MARK:- extension GIDSignInUIDelegate
+extension LoginViewController: GIDSignInUIDelegate {
+    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
+        enableViewElements(enable: true)
+    }
 }
