@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		330C236C21B9CCA5009C777D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330C236B21B9CCA5009C777D /* MainViewController.swift */; };
 		330C237121B9D5C2009C777D /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330C237021B9D5C2009C777D /* MainNavigationViewController.swift */; };
+		331B0A5921BB048B00B4F4D3 /* LocationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331B0A5821BB048B00B4F4D3 /* LocationsController.swift */; };
+		331B0A5B21BB18C900B4F4D3 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331B0A5A21BB18C900B4F4D3 /* Place.swift */; };
+		335BA06C21BA8FCA006D59C1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335BA06B21BA8FCA006D59C1 /* MapViewController.swift */; };
+		335BA06E21BA9598006D59C1 /* PlaceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335BA06D21BA9598006D59C1 /* PlaceAnnotation.swift */; };
+		335BA07021BAA375006D59C1 /* PlaceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335BA06F21BAA375006D59C1 /* PlaceUtils.swift */; };
 		3379A35C21B960F300C4BF8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3379A35B21B960F300C4BF8B /* AppDelegate.swift */; };
 		3379A36121B960F300C4BF8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3379A35F21B960F300C4BF8B /* Main.storyboard */; };
 		3379A36321B960F300C4BF8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3379A36221B960F300C4BF8B /* Assets.xcassets */; };
@@ -25,8 +29,12 @@
 
 /* Begin PBXFileReference section */
 		073FE6881F0F294EB85A0C67 /* Pods-NearMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-NearMe/Pods-NearMe.release.xcconfig"; sourceTree = "<group>"; };
-		330C236B21B9CCA5009C777D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		330C237021B9D5C2009C777D /* MainNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationViewController.swift; sourceTree = "<group>"; };
+		331B0A5821BB048B00B4F4D3 /* LocationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsController.swift; sourceTree = "<group>"; };
+		331B0A5A21BB18C900B4F4D3 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		335BA06B21BA8FCA006D59C1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		335BA06D21BA9598006D59C1 /* PlaceAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAnnotation.swift; sourceTree = "<group>"; };
+		335BA06F21BAA375006D59C1 /* PlaceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceUtils.swift; sourceTree = "<group>"; };
 		3379A35821B960F300C4BF8B /* NearMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NearMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3379A35B21B960F300C4BF8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3379A36021B960F300C4BF8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,7 +70,7 @@
 				330C237021B9D5C2009C777D /* MainNavigationViewController.swift */,
 				33D094B121B9627A00D9E7A7 /* LoginViewController.swift */,
 				33D094BC21B998EB00D9E7A7 /* SignUpViewController.swift */,
-				330C236B21B9CCA5009C777D /* MainViewController.swift */,
+				335BA06B21BA8FCA006D59C1 /* MapViewController.swift */,
 			);
 			path = "Main storyboard";
 			sourceTree = "<group>";
@@ -102,8 +110,10 @@
 		33D094AC21B9613A00D9E7A7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				33D094B621B981A600D9E7A7 /* AccountController.swift */,
+				335BA06F21BAA375006D59C1 /* PlaceUtils.swift */,
 				33D094B821B982C800D9E7A7 /* StringUtils.swift */,
+				33D094B621B981A600D9E7A7 /* AccountController.swift */,
+				331B0A5821BB048B00B4F4D3 /* LocationsController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -122,6 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				33D094B321B97C8100D9E7A7 /* UIView */,
+				331B0A5A21BB18C900B4F4D3 /* Place.swift */,
+				335BA06D21BA9598006D59C1 /* PlaceAnnotation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -254,8 +266,12 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/HCSStarRatingView/HCSStarRatingView.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -266,8 +282,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HCSStarRatingView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,12 +321,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				33D094BB21B9854C00D9E7A7 /* LoadingButton.swift in Sources */,
+				331B0A5B21BB18C900B4F4D3 /* Place.swift in Sources */,
 				33D094BD21B998EB00D9E7A7 /* SignUpViewController.swift in Sources */,
+				335BA06E21BA9598006D59C1 /* PlaceAnnotation.swift in Sources */,
 				33D094B221B9627A00D9E7A7 /* LoginViewController.swift in Sources */,
 				33D094B921B982C800D9E7A7 /* StringUtils.swift in Sources */,
+				335BA06C21BA8FCA006D59C1 /* MapViewController.swift in Sources */,
+				335BA07021BAA375006D59C1 /* PlaceUtils.swift in Sources */,
 				3379A35C21B960F300C4BF8B /* AppDelegate.swift in Sources */,
+				331B0A5921BB048B00B4F4D3 /* LocationsController.swift in Sources */,
 				330C237121B9D5C2009C777D /* MainNavigationViewController.swift in Sources */,
-				330C236C21B9CCA5009C777D /* MainViewController.swift in Sources */,
 				33D094B521B97C9600D9E7A7 /* CustomButton.swift in Sources */,
 				33D094B721B981A600D9E7A7 /* AccountController.swift in Sources */,
 			);

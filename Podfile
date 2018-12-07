@@ -13,8 +13,12 @@ target 'NearMe' do
   
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
   
   pod 'GoogleSignIn'
   pod 'FBSDKLoginKit'
 
+  pod 'HCSStarRatingView'
+  
+  pod 'RealmSwift'
 end
