@@ -10,6 +10,7 @@ import UIKit
 import SVProgressHUD
 import FirebaseAuth
 import GoogleSignIn
+import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
 
@@ -125,7 +126,30 @@ class LoginViewController: UIViewController {
             enableViewElements(enable: false)
             GIDSignIn.sharedInstance()?.signIn()
         case btnSignInFacebook:
-            break
+            enableViewElements(enable: false)
+            
+            if FBSDKAccessToken.current() != nil {
+                FBSDKLoginManager().logOut()
+            }
+            
+            let fbLoginManager = FBSDKLoginManager()
+            
+            fbLoginManager.logIn(withReadPermissions: ["public_profile", "email"], from: self) { [unowned self] (result: FBSDKLoginManagerLoginResult?, error: Error?) in
+                
+                self.enableViewElements(enable: true)
+                
+                if let error = error {
+                    print("Failed to login: \(error.localizedDescription)")
+                    SVProgressHUD.showError(withStatus: "Failed to login with facebook: \(error.localizedDescription)")
+                    return
+                }
+                
+                guard let accessToken = FBSDKAccessToken.current() else {
+                    print("Failed to get access token")
+                    return
+                }
+
+            }
         default:
             break
         }
