@@ -10,6 +10,8 @@
 		330C237121B9D5C2009C777D /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330C237021B9D5C2009C777D /* MainNavigationViewController.swift */; };
 		331B0A5921BB048B00B4F4D3 /* LocationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331B0A5821BB048B00B4F4D3 /* LocationsController.swift */; };
 		331B0A5B21BB18C900B4F4D3 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331B0A5A21BB18C900B4F4D3 /* Place.swift */; };
+		331B0A5D21BB2A6D00B4F4D3 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331B0A5C21BB2A6D00B4F4D3 /* MainTabViewController.swift */; };
+		331B0A5F21BB2D8100B4F4D3 /* ToDo in Resources */ = {isa = PBXBuildFile; fileRef = 331B0A5E21BB2D8100B4F4D3 /* ToDo */; };
 		335BA06C21BA8FCA006D59C1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335BA06B21BA8FCA006D59C1 /* MapViewController.swift */; };
 		335BA06E21BA9598006D59C1 /* PlaceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335BA06D21BA9598006D59C1 /* PlaceAnnotation.swift */; };
 		335BA07021BAA375006D59C1 /* PlaceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335BA06F21BAA375006D59C1 /* PlaceUtils.swift */; };
@@ -32,6 +34,8 @@
 		330C237021B9D5C2009C777D /* MainNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationViewController.swift; sourceTree = "<group>"; };
 		331B0A5821BB048B00B4F4D3 /* LocationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsController.swift; sourceTree = "<group>"; };
 		331B0A5A21BB18C900B4F4D3 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		331B0A5C21BB2A6D00B4F4D3 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
+		331B0A5E21BB2D8100B4F4D3 /* ToDo */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToDo; sourceTree = "<group>"; };
 		335BA06B21BA8FCA006D59C1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		335BA06D21BA9598006D59C1 /* PlaceAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAnnotation.swift; sourceTree = "<group>"; };
 		335BA06F21BAA375006D59C1 /* PlaceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceUtils.swift; sourceTree = "<group>"; };
@@ -68,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				330C237021B9D5C2009C777D /* MainNavigationViewController.swift */,
+				331B0A5C21BB2A6D00B4F4D3 /* MainTabViewController.swift */,
 				33D094B121B9627A00D9E7A7 /* LoginViewController.swift */,
 				33D094BC21B998EB00D9E7A7 /* SignUpViewController.swift */,
 				335BA06B21BA8FCA006D59C1 /* MapViewController.swift */,
@@ -103,6 +108,7 @@
 				3379A36221B960F300C4BF8B /* Assets.xcassets */,
 				33D094AF21B961EF00D9E7A7 /* GoogleService-Info.plist */,
 				3379A36721B960F300C4BF8B /* Info.plist */,
+				331B0A5E21BB2D8100B4F4D3 /* ToDo */,
 			);
 			path = NearMe;
 			sourceTree = "<group>";
@@ -226,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3379A36621B960F300C4BF8B /* LaunchScreen.storyboard in Resources */,
+				331B0A5F21BB2D8100B4F4D3 /* ToDo in Resources */,
 				33D094B021B961EF00D9E7A7 /* GoogleService-Info.plist in Resources */,
 				3379A36321B960F300C4BF8B /* Assets.xcassets in Resources */,
 				3379A36121B960F300C4BF8B /* Main.storyboard in Resources */,
@@ -325,6 +332,7 @@
 				33D094BD21B998EB00D9E7A7 /* SignUpViewController.swift in Sources */,
 				335BA06E21BA9598006D59C1 /* PlaceAnnotation.swift in Sources */,
 				33D094B221B9627A00D9E7A7 /* LoginViewController.swift in Sources */,
+				331B0A5D21BB2A6D00B4F4D3 /* MainTabViewController.swift in Sources */,
 				33D094B921B982C800D9E7A7 /* StringUtils.swift in Sources */,
 				335BA06C21BA8FCA006D59C1 /* MapViewController.swift in Sources */,
 				335BA07021BAA375006D59C1 /* PlaceUtils.swift in Sources */,
