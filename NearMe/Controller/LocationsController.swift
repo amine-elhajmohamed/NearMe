@@ -64,6 +64,22 @@ class LocationsController {
             
         }
         
+        //observe rating change
+        database.observe(.childChanged) { (snapShot: DataSnapshot) in
+            
+            if let data = snapShot.value as? [String: AnyObject], let rating = data["rating"] as? Double {
+                
+                let identifier = snapShot.key
+                if let place = self.realm.object(ofType: Place.self, forPrimaryKey: identifier) {
+                    try! self.realm.write {
+                        place.rating = rating
+                    }
+                }
+                
+            }
+            
+        }
+        
     }
     
 }
