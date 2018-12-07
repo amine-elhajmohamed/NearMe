@@ -44,7 +44,7 @@ class MainNavigationViewController: UINavigationController {
     //MARK:- Actions
     
     func presentMainView(animated: Bool){
-        if let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainVC") {
+        if let mainVC = self.storyboard?.instantiateViewController(withIdentifier: "MainTabVC") {
             present(mainVC, animated: animated) { [unowned self] in
                 self.restNavigationControllerViews()
             }
