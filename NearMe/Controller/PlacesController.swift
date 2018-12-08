@@ -19,14 +19,14 @@ class PlacesController {
     
     private let realm = try! Realm()
     
+    private let database = Database.database().reference().child("locations")
+    
     func start(){
         guard !isStarted else {
             return
         }
         
         isStarted = true
-        
-        let database = Database.database().reference().child("locations")
         
         database.observe(.childAdded) { (snapshot: DataSnapshot) in
             self.parsePlaceFromSnapshot(snapshot: snapshot)
@@ -35,6 +35,11 @@ class PlacesController {
         database.observe(.childChanged) { (snapshot: DataSnapshot) in
             self.parsePlaceFromSnapshot(snapshot: snapshot)
         }
+    }
+    
+    func stop(){
+        isStarted = false
+        database.removeAllObservers()
     }
     
     func createNewPlace(name: String, type: String, latitude: Double, longitude: Double, onComplition: @escaping ((CreateNewPlaceResult)->())){

@@ -111,6 +111,7 @@ class NearMeViewController: UIViewController {
                 case .success:
                     self.dismiss(animated: true, completion: nil)
                     MainTabViewController.ref = nil
+                    PlacesController.shared.stop()
                     try! self.realm.write {
                         self.realm.deleteAll()
                     }
