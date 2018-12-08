@@ -16,6 +16,8 @@ class PlaceMapDetailsViewController: UIViewController {
 
     @IBOutlet weak var btnDirection: LoadingButton!
     @IBOutlet weak var btnClose: UIButton!
+    @IBOutlet weak var btnZoomMap: UIButton!
+    @IBOutlet weak var btnShare: UIButton!
     
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblRating: UILabel!
@@ -130,46 +132,55 @@ class PlaceMapDetailsViewController: UIViewController {
 
     //MARK:- Actions
     
+    private func attemtGetDirection(){
+        guard CLLocationManager.authorizationStatus() == .authorizedWhenInUse else {
+            let alertVC = UIAlertController(title: "Allow GPS", message: "In order to use direction, the app need to access the GPS.\n Please enabled GPS access for the app.", preferredStyle: .alert)
+            alertVC.addAction(UIAlertAction(title: "Open settings", style: .default, handler: { (_) in
+                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                    return
+                }
+                
+                if UIApplication.shared.canOpenURL(settingsUrl) {
+                    UIApplication.shared.open(settingsUrl)
+                }
+            }))
+            alertVC.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+            present(alertVC, animated: true, completion: nil)
+            return
+        }
+        
+        guard CLLocationManager().location != nil else {
+            let alertVC = UIAlertController(title: "Failed to get your possition", message: "An error has been occured and couldn't detect your postion, please try again later.", preferredStyle: .alert)
+            alertVC.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+            present(alertVC, animated: true, completion: nil)
+            return
+        }
+        
+        view.isUserInteractionEnabled = false
+        btnDirection.startAnimating()
+        
+        presentingMapView?.getDirectionToPlace(place: place, onComplition: { [weak self] (success: Bool) in
+            
+            self?.view.isUserInteractionEnabled = true
+            self?.btnDirection.stopAnimating {
+                if success {
+                    self?.dismissView()
+                } else {
+                    SVProgressHUD.showError(withStatus: "An error occurred\n\nPlease check your internet connection and try again.")
+                }
+            }
+        })
+    }
+    
     @IBAction func btnClicked(_ sender: UIButton) {
         switch sender {
         case btnDirection:
-            guard CLLocationManager.authorizationStatus() == .authorizedWhenInUse else {
-                let alertVC = UIAlertController(title: "Allow GPS", message: "In order to use direction, the app need to access the GPS.\n Please enabled GPS access for the app.", preferredStyle: .alert)
-                alertVC.addAction(UIAlertAction(title: "Open settings", style: .default, handler: { (_) in
-                    guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
-                        return
-                    }
-                    
-                    if UIApplication.shared.canOpenURL(settingsUrl) {
-                        UIApplication.shared.open(settingsUrl)
-                    }
-                }))
-                alertVC.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
-                present(alertVC, animated: true, completion: nil)
-                return
-            }
-            
-            guard CLLocationManager().location != nil else {
-                let alertVC = UIAlertController(title: "Failed to get your possition", message: "An error has been occured and couldn't detect your postion, please try again later.", preferredStyle: .alert)
-                alertVC.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
-                present(alertVC, animated: true, completion: nil)
-                return
-            }
-            
-            view.isUserInteractionEnabled = false
-            btnDirection.startAnimating()
-            
-            presentingMapView?.getDirectionToPlace(place: place, onComplition: { [weak self] (success: Bool) in
-                
-                self?.view.isUserInteractionEnabled = true
-                self?.btnDirection.stopAnimating {
-                    if success {
-                        self?.dismissView()
-                    } else {
-                        SVProgressHUD.showError(withStatus: "An error occurred\n\nPlease check your internet connection and try again.")
-                    }
-                }
-            })
+            attemtGetDirection()
+        case btnZoomMap:
+            presentingMapView?.zoomTheMapToAPlace(place: place)
+            dismissView()
+        case btnShare:
+            break
         case btnClose:
             dismissView()
         default:

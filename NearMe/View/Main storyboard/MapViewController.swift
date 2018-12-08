@@ -85,6 +85,11 @@ class MapViewController: UIViewController {
         }
     }
     
+    func zoomTheMapToAPlace(place: Place){
+        let placeRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude), latitudinalMeters: 300, longitudinalMeters: 300)
+        mapView.setRegion(placeRegion, animated: true)
+    }
+    
     func getDirectionToPlace(place: Place, onComplition: @escaping ((Bool)->())) {
         guard let currentUserLocation = locationManager.location?.coordinate else {
             return
