@@ -61,6 +61,10 @@ class NearMeViewController: UIViewController {
             
             switch changes {
             case .initial:
+                guard self.myRatesPlaces.count > 0 else {
+                    return
+                }
+                
                 let reloadDataAt = (1...self.myRatesPlaces.count+1).map({ (value: Int) -> IndexPath in
                     return IndexPath(row: value, section: 0)
                 })
