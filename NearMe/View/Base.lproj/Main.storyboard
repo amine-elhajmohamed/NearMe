@@ -432,7 +432,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aEE-j2-6Kf"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="SwZ-Db-sqw"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="SwZ-Db-sqw"/>
                     <connections>
                         <outlet property="mapView" destination="LNX-Ec-bX5" id="ugG-wv-wLV"/>
                     </connections>
@@ -529,7 +529,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2IQ-Vu-drZ"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="i5i-PX-Zw6"/>
+                    <tabBarItem key="tabBarItem" title="NearMe" image="NearMeIcon" id="i5i-PX-Zw6"/>
                     <navigationItem key="navigationItem" title="NearMe" id="CUV-fc-o5T"/>
                     <connections>
                         <outlet property="btnLogout" destination="2YU-9r-vaR" id="7gV-6E-T5u"/>
@@ -1103,7 +1103,9 @@
         <image name="BarIcon" width="512" height="512"/>
         <image name="CoffeeIcon" width="512" height="512"/>
         <image name="KidsEntertainmentIcon" width="512" height="512"/>
+        <image name="MapIcon" width="25" height="25"/>
         <image name="MapSquareIcon" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="NearMeIcon" width="25" height="25"/>
         <image name="ParkIcon" width="512" height="512"/>
         <image name="RestaurantIcon" width="512" height="512"/>
         <image name="StarIcon" width="409.60000610351562" height="409.60000610351562"/>
