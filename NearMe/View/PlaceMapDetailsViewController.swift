@@ -25,6 +25,7 @@ class PlaceMapDetailsViewController: UIViewController {
     @IBOutlet weak var img: UIImageView!
     
     @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var mainView: UIView!
     
@@ -91,6 +92,7 @@ class PlaceMapDetailsViewController: UIViewController {
             self.bgView.alpha = 1
             self.mainView.transform = CGAffineTransform(translationX: 0, y: 0)
             self.topView.transform = self.mainView.transform
+            self.bottomView.transform = self.mainView.transform
         }
         
         if animated {
@@ -107,6 +109,7 @@ class PlaceMapDetailsViewController: UIViewController {
             self.bgView.alpha = 0
             self.mainView.transform = CGAffineTransform(translationX: 0, y: self.view.frame.height)
             self.topView.transform = self.mainView.transform
+            self.bottomView.transform = self.mainView.transform
         }
         
         if animated {
