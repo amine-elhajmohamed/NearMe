@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		330C237121B9D5C2009C777D /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330C237021B9D5C2009C777D /* MainNavigationViewController.swift */; };
+		330D5E7A21BB531500E3667B /* PlaceMapDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330D5E7921BB531500E3667B /* PlaceMapDetailsViewController.swift */; };
 		331B0A5921BB048B00B4F4D3 /* PlacesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331B0A5821BB048B00B4F4D3 /* PlacesController.swift */; };
 		331B0A5B21BB18C900B4F4D3 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331B0A5A21BB18C900B4F4D3 /* Place.swift */; };
 		331B0A5D21BB2A6D00B4F4D3 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331B0A5C21BB2A6D00B4F4D3 /* MainTabViewController.swift */; };
@@ -33,6 +34,7 @@
 /* Begin PBXFileReference section */
 		073FE6881F0F294EB85A0C67 /* Pods-NearMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-NearMe/Pods-NearMe.release.xcconfig"; sourceTree = "<group>"; };
 		330C237021B9D5C2009C777D /* MainNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationViewController.swift; sourceTree = "<group>"; };
+		330D5E7921BB531500E3667B /* PlaceMapDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceMapDetailsViewController.swift; sourceTree = "<group>"; };
 		331B0A5821BB048B00B4F4D3 /* PlacesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesController.swift; sourceTree = "<group>"; };
 		331B0A5A21BB18C900B4F4D3 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		331B0A5C21BB2A6D00B4F4D3 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				33D094BC21B998EB00D9E7A7 /* SignUpViewController.swift */,
 				335BA06B21BA8FCA006D59C1 /* MapViewController.swift */,
 				331B0A6021BB39F500B4F4D3 /* AddNewPlaceViewController.swift */,
+				330D5E7921BB531500E3667B /* PlaceMapDetailsViewController.swift */,
 			);
 			path = "Main storyboard";
 			sourceTree = "<group>";
@@ -336,6 +339,7 @@
 				335BA06E21BA9598006D59C1 /* PlaceAnnotation.swift in Sources */,
 				33D094B221B9627A00D9E7A7 /* LoginViewController.swift in Sources */,
 				331B0A5D21BB2A6D00B4F4D3 /* MainTabViewController.swift in Sources */,
+				330D5E7A21BB531500E3667B /* PlaceMapDetailsViewController.swift in Sources */,
 				33D094B921B982C800D9E7A7 /* StringUtils.swift in Sources */,
 				335BA06C21BA8FCA006D59C1 /* MapViewController.swift in Sources */,
 				335BA07021BAA375006D59C1 /* PlaceUtils.swift in Sources */,

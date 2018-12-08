@@ -69,10 +69,11 @@ class MapViewController: UIViewController {
             let touchPoint = sender.location(in: mapView)
             let coordinates = mapView.convert(touchPoint, toCoordinateFrom: mapView)
             
-            let addNewPlaceVC = storyboard?.instantiateViewController(withIdentifier: "AddNewPlaceVC") as! AddNewPlaceViewController
-            addNewPlaceVC.latitude = coordinates.latitude
-            addNewPlaceVC.longitude = coordinates.longitude
-            present(addNewPlaceVC, animated: false, completion: nil)
+            if let addNewPlaceVC = storyboard?.instantiateViewController(withIdentifier: "AddNewPlaceVC") as? AddNewPlaceViewController {
+                addNewPlaceVC.latitude = coordinates.latitude
+                addNewPlaceVC.longitude = coordinates.longitude
+                present(addNewPlaceVC, animated: false, completion: nil)
+            }
         }
         
     }
@@ -82,7 +83,9 @@ class MapViewController: UIViewController {
 extension MapViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        print("test")
+        if let placeMapDetailsVC = storyboard?.instantiateViewController(withIdentifier: "PlaceMapDetailsVC") as? PlaceMapDetailsViewController {
+            present(placeMapDetailsVC, animated: false, completion: nil)
+        }
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
