@@ -83,13 +83,20 @@ class MapViewController: UIViewController {
 extension MapViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        guard let annotation = view.annotation as? PlaceAnnotation else {
+            return
+        }
+        
         if let placeMapDetailsVC = storyboard?.instantiateViewController(withIdentifier: "PlaceMapDetailsVC") as? PlaceMapDetailsViewController {
+            placeMapDetailsVC.place = annotation.place
             present(placeMapDetailsVC, animated: false, completion: nil)
         }
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        guard let annotation = annotation as? PlaceAnnotation else { return nil }
+        guard let annotation = annotation as? PlaceAnnotation else {
+            return nil
+        }
         
         let annotationIdentifier = annotation.place._type
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier)

@@ -14,6 +14,8 @@ class Place: Object {
     @objc dynamic var name:String = "__"
     @objc dynamic var _type:String = "__"
     @objc dynamic var rating: Double = 0
+    @objc dynamic var totalRates: Int = 0
+    @objc dynamic var myRating: Int = 0
     @objc dynamic var latitude: Double = 0
     @objc dynamic var longitude: Double = 0
     

@@ -9,6 +9,7 @@
 import Foundation
 import FirebaseDatabase
 import RealmSwift
+import FirebaseAuth
 
 class PlacesController {
     
@@ -30,10 +31,25 @@ class PlacesController {
         database.observe(.childAdded) { (snapshot: DataSnapshot) in
             
             if let data = snapshot.value as? [String: AnyObject], let name = data["name"] as? String,
-                let latitude = data["lat"] as? Double, let longitude = data["long"] as? Double,
-                let rating = data["rating"] as? Double, let type = data["type"] as? String {
+                let latitude = data["lat"] as? Double, let longitude = data["long"] as? Double, let type = data["type"] as? String {
                 
                 let identifier = snapshot.key
+                
+                var totalRates = 0
+                var totalRatesCount = 0
+                var myRating = 0
+                
+                if let rates = data["rates"] as? [String: Int] {
+                    totalRatesCount = rates.count
+                    
+                    for element in rates {
+                        totalRates += element.value
+                    }
+                    
+                    if let currentUserRating = rates[Auth.auth().currentUser?.uid ?? ""] {
+                        myRating = currentUserRating
+                    }
+                }
                 
                 var place: Place! = nil
                 
@@ -42,7 +58,9 @@ class PlacesController {
                     place.latitude = latitude
                     place.longitude = longitude
                     place._type = type
-                    place.rating = rating
+                    place.rating = totalRatesCount == 0 ? 0: Double(totalRates / totalRatesCount)
+                    place.totalRates = totalRatesCount
+                    place.myRating = myRating
                 }
                 
                 place = self.realm.object(ofType: Place.self, forPrimaryKey: identifier)
@@ -64,24 +82,7 @@ class PlacesController {
             
         }
         
-        //observe rating change
-        database.observe(.childChanged) { (snapShot: DataSnapshot) in
-            
-            if let data = snapShot.value as? [String: AnyObject], let rating = data["rating"] as? Double {
-                
-                let identifier = snapShot.key
-                if let place = self.realm.object(ofType: Place.self, forPrimaryKey: identifier) {
-                    try! self.realm.write {
-                        place.rating = rating
-                    }
-                }
-                
-            }
-            
-        }
-        
     }
-    
     
     func createNewPlace(name: String, type: String, latitude: Double, longitude: Double, onComplition: @escaping ((CreateNewPlaceResult)->())){
         let database = Database.database().reference().child("locations")
@@ -94,6 +95,26 @@ class PlacesController {
             } else {
                 onComplition(.failed)
             }
+        }
+    }
+    
+    func ratePlace(place: Place, rate: Int){
+        guard let currentUserId = Auth.auth().currentUser?.uid else {
+            return
+        }
+        
+        let database = Database.database().reference().child("locations").child(place.identifier).child("rates").child(currentUserId)
+        database.setValue(rate)
+        
+        try! realm.write {
+            if place.myRating == 0 {
+                place.rating = ((place.rating * Double(place.totalRates)) + Double(rate)) / Double(place.totalRates + 1)
+                place.totalRates += 1
+            } else {
+                place.rating = ((place.rating * Double(place.totalRates)) + Double(rate - place.myRating)) / Double(place.totalRates)
+            }
+            
+            place.myRating = rate
         }
     }
 }

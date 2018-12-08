@@ -792,6 +792,9 @@
                                                 <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="startViewRatingChanged:" destination="jdK-L1-jkJ" eventType="valueChanged" id="lqt-aT-aJ8"/>
+                                        </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lg3-R7-6mK">
                                         <rect key="frame" x="100" y="10" width="255" height="69.5"/>
@@ -848,6 +851,9 @@
                                         <state key="normal" title="Close">
                                             <color key="titleColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btnClicked:" destination="jdK-L1-jkJ" eventType="touchUpInside" id="qra-B4-kae"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F74-of-3jD" customClass="CustomButton" customModule="NearMe" customModuleProvider="target">
                                         <rect key="frame" x="112.5" y="209.5" width="150" height="40"/>
@@ -859,6 +865,9 @@
                                         <state key="normal" title="Direction">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="btnClicked:" destination="jdK-L1-jkJ" eventType="touchUpInside" id="4lS-Ox-1F5"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -904,6 +913,7 @@
                         <outlet property="lblRated" destination="hTi-7D-HmQ" id="nxG-oo-jMc"/>
                         <outlet property="lblRating" destination="fOZ-1A-0IF" id="1kn-qT-obH"/>
                         <outlet property="mainView" destination="QJV-BT-FOP" id="ZqV-nw-OI9"/>
+                        <outlet property="startsRating" destination="FYh-qk-xdq" id="4lb-1u-jOx"/>
                         <outlet property="topView" destination="q5i-yq-Uc6" id="EWS-28-f2J"/>
                     </connections>
                 </viewController>

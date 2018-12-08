@@ -12,6 +12,21 @@ class PlaceUtils {
     
     static let shared = PlaceUtils()
     
+    func getPlaceIcon(type: PlaceType) -> UIImage?{
+        switch type {
+        case .bar:
+            return UIImage(named: "BarIcon")
+        case .coffee:
+            return UIImage(named: "CoffeeIcon")
+        case .kidsEntertainment:
+            return UIImage(named: "KidsEntertainmentIcon")
+        case .restaurant:
+            return UIImage(named: "ParkIcon")
+        case .park:
+            return UIImage(named: "RestaurantIcon")
+        }
+    }
+    
     func getPlaceIconForMarker(type: PlaceType) -> UIImage?{
         switch type {
         case .bar:

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import HCSStarRatingView
+import RealmSwift
 
 class PlaceMapDetailsViewController: UIViewController {
 
@@ -23,6 +25,11 @@ class PlaceMapDetailsViewController: UIViewController {
     @IBOutlet weak var bgView: UIView!
     @IBOutlet weak var mainView: UIView!
     
+    @IBOutlet weak var startsRating: HCSStarRatingView!
+    
+    private var notificationToken : NotificationToken?
+    
+    var place: Place!
     
     private var isFirstTimeAppearing = true
     
@@ -51,6 +58,26 @@ class PlaceMapDetailsViewController: UIViewController {
         topView.layer.shadowOffset = CGSize(width: 0, height: -10)
         
         closeView(animated: false)
+        
+        lblName.text = place.name
+        lblRating.text = String(format: "%.01f", place.rating)
+        lblRated.text = "\(place.totalRates) rates"
+        img.image = PlaceUtils.shared.getPlaceIcon(type: place.type)
+        startsRating.value = CGFloat(place.myRating)
+        
+        notificationToken = place.observe({ [weak self] (change) in
+            guard let self = self else {
+                return
+            }
+            
+            switch change {
+            case .change(_):
+                self.lblRating.text = String(format: "%.01f", self.place.rating)
+                self.lblRated.text = "\(self.place.totalRates) rates"
+            default:
+                break
+            }
+        })
     }
     
     private func openView(animated: Bool){
@@ -89,12 +116,30 @@ class PlaceMapDetailsViewController: UIViewController {
     }
     
     private func dismissView(){
+        notificationToken?.invalidate()
+        notificationToken = nil
+        
         closeView(animated: true) { [weak self] in
             self?.dismiss(animated: false, completion: nil)
         }
     }
 
     //MARK:- Actions
+    
+    @IBAction func btnClicked(_ sender: UIButton) {
+        switch sender {
+        case btnDirection:
+            break
+        case btnClose:
+            dismissView()
+        default:
+            break
+        }
+    }
+    
+    @IBAction func startViewRatingChanged(_ sender: HCSStarRatingView) {
+        PlacesController.shared.ratePlace(place: place, rate: Int(sender.value))
+    }
     
     @IBAction func bgViewTaped(_ sender: Any) {
         dismissView()
