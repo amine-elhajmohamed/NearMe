@@ -68,7 +68,7 @@ class PlaceMapDetailsViewController: UIViewController {
         lblName.text = place.name
         lblRating.text = String(format: "%.01f", place.rating)
         lblRated.text = "\(place.totalRates) rates"
-        img.image = PlaceUtils.shared.getPlaceIcon(type: place.type)
+        img.image = PlaceUtils.getPlaceIcon(type: place.type)
         startsRating.value = CGFloat(place.myRating)
         
         notificationToken = place.observe({ [weak self] (change) in

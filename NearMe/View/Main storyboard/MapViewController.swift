@@ -165,7 +165,7 @@ extension MapViewController: MKMapViewDelegate {
             annotationView!.annotation = annotation
         }
         
-        annotationView!.image = PlaceUtils.shared.getPlaceIconForMarker(type: annotation.place.type)
+        annotationView!.image = PlaceUtils.getPlaceIconForMarker(type: annotation.place.type)
         
         return annotationView
     }

@@ -11,9 +11,7 @@ import CoreLocation
 
 class PlaceUtils {
     
-    static let shared = PlaceUtils()
-    
-    func getPlaceIcon(type: PlaceType) -> UIImage?{
+    static func getPlaceIcon(type: PlaceType) -> UIImage?{
         switch type {
         case .bar:
             return UIImage(named: "BarIcon")
@@ -28,7 +26,7 @@ class PlaceUtils {
         }
     }
     
-    func getPlaceIconForMarker(type: PlaceType) -> UIImage?{
+    static func getPlaceIconForMarker(type: PlaceType) -> UIImage?{
         switch type {
         case .bar:
             return UIImage(named: "BarMarkerIcon")
@@ -43,7 +41,7 @@ class PlaceUtils {
         }
     }
     
-    func getDistanceBetween(location1: CLLocation, location2: CLLocation) -> Int{
+    static func getDistanceBetween(location1: CLLocation, location2: CLLocation) -> Int{
         return Int(location1.distance(from: location2))
     }
     

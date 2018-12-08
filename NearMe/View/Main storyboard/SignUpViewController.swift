@@ -57,7 +57,7 @@ class SignUpViewController: UIViewController {
             return
         }
         
-        guard StringUtils.shared.verifyEmailFormat(email: email) else {
+        guard StringUtils.verifyEmailFormat(email: email) else {
             lblError.text = "Email incorrect"
             txtEmail.becomeFirstResponder()
             return
@@ -69,7 +69,7 @@ class SignUpViewController: UIViewController {
             return
         }
         
-        guard StringUtils.shared.verifyPasswordFormat(password: password) else {
+        guard StringUtils.verifyPasswordFormat(password: password) else {
             lblError.text = "Password should be 8 characters or more"
             txtPassword.becomeFirstResponder()
             return

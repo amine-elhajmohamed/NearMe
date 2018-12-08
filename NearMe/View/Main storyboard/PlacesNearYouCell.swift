@@ -59,11 +59,11 @@ class PlacesNearYouTableViewCell: UITableViewCell {
         }
         
         places = _places.filter({ (place: Place) -> Bool in
-            return PlaceUtils.shared.getDistanceBetween(location1: currentUserLocation, location2: CLLocation(latitude: place.latitude, longitude: place.longitude)) <= 100000
+            return PlaceUtils.getDistanceBetween(location1: currentUserLocation, location2: CLLocation(latitude: place.latitude, longitude: place.longitude)) <= 100000
         })
         
         places = places.sorted(by: { (p1: Place, p2: Place) -> Bool in
-            return PlaceUtils.shared.getDistanceBetween(location1: currentUserLocation, location2: CLLocation(latitude: p1.latitude, longitude: p1.longitude)) <= PlaceUtils.shared.getDistanceBetween(location1: currentUserLocation, location2: CLLocation(latitude: p2.latitude, longitude: p2.longitude))
+            return PlaceUtils.getDistanceBetween(location1: currentUserLocation, location2: CLLocation(latitude: p1.latitude, longitude: p1.longitude)) <= PlaceUtils.getDistanceBetween(location1: currentUserLocation, location2: CLLocation(latitude: p2.latitude, longitude: p2.longitude))
         })
     }
     

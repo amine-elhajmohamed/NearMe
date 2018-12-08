@@ -54,7 +54,7 @@ class PlaceNearYouCollectionViewCell: UICollectionViewCell {
         lblDistance.text = ""
         
         if let currentUserLocation = CLLocationManager().location {
-            let distance = PlaceUtils.shared.getDistanceBetween(location1: currentUserLocation, location2: CLLocation(latitude: place.latitude, longitude: place.longitude))
+            let distance = PlaceUtils.getDistanceBetween(location1: currentUserLocation, location2: CLLocation(latitude: place.latitude, longitude: place.longitude))
             if distance < 1000 {
                 lblDistance.text = "\(distance) m"
             } else {
@@ -62,6 +62,6 @@ class PlaceNearYouCollectionViewCell: UICollectionViewCell {
             }
         }
         
-        img.image = PlaceUtils.shared.getPlaceIcon(type: place.type)
+        img.image = PlaceUtils.getPlaceIcon(type: place.type)
     }
 }

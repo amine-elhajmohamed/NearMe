@@ -62,7 +62,7 @@ class LoginViewController: UIViewController {
     
     private func attemptSignInWithEmail(){
         
-        guard let email = txtEmail.text, StringUtils.shared.verifyEmailFormat(email: email) else {
+        guard let email = txtEmail.text, StringUtils.verifyEmailFormat(email: email) else {
             lblError.text = "Please enter a valid email address"
             txtEmail.becomeFirstResponder()
             return
