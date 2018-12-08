@@ -24,6 +24,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     
+    @IBOutlet weak var constaint_lblWelcom_top: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,6 +44,11 @@ class LoginViewController: UIViewController {
         
         GIDSignIn.sharedInstance()?.uiDelegate = self
         GIDSignIn.sharedInstance().delegate = self
+        
+        if view.frame.height <= 568 {
+            constaint_lblWelcom_top.constant = 30
+        }
+        
     }
     
     /**

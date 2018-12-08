@@ -44,7 +44,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NWz-Xu-gyR">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hss-Ri-dWx">
                                                 <rect key="frame" x="132" y="80" width="111" height="24"/>
@@ -118,30 +118,31 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sss-Da-cOZ">
-                                                <rect key="frame" x="10" y="547" width="159" height="2"/>
+                                                <rect key="frame" x="10" y="517" width="159" height="2"/>
                                                 <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="tCd-66-XDm"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YwG-fg-dWA">
-                                                <rect key="frame" x="179" y="539" width="17" height="18"/>
+                                                <rect key="frame" x="179" y="509" width="17" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4XN-MA-2OR">
-                                                <rect key="frame" x="206" y="547" width="159" height="2"/>
+                                                <rect key="frame" x="206" y="517" width="159" height="2"/>
                                                 <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="1GX-1c-TB8"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bjY-og-5yV" customClass="CustomButton" customModule="NearMe" customModuleProvider="target">
-                                                <rect key="frame" x="87.5" y="572" width="200" height="30"/>
+                                                <rect key="frame" x="87.5" y="542" width="200" height="35"/>
                                                 <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="05I-a5-5N2"/>
+                                                    <constraint firstAttribute="height" constant="35" id="9JK-WG-TVs"/>
                                                 </constraints>
                                                 <state key="normal" title="Sign in with Google">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -151,10 +152,11 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Svg-dl-IFJ" customClass="CustomButton" customModule="NearMe" customModuleProvider="target">
-                                                <rect key="frame" x="87.5" y="617" width="200" height="30"/>
+                                                <rect key="frame" x="87.5" y="592" width="200" height="35"/>
                                                 <color key="backgroundColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="BEZ-N5-R5X"/>
+                                                    <constraint firstAttribute="height" constant="35" id="f0K-Vr-E9s"/>
                                                 </constraints>
                                                 <state key="normal" title="Sign in with Facebook">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -218,7 +220,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="hwb-He-amC" firstAttribute="top" secondItem="d2i-c7-hjS" secondAttribute="top" id="A0z-LW-Wa3"/>
-                            <constraint firstItem="swV-uy-GS3" firstAttribute="bottom" secondItem="NWz-Xu-gyR" secondAttribute="bottom" id="EDw-gM-bMS"/>
                             <constraint firstItem="xcN-oj-vey" firstAttribute="leading" secondItem="swV-uy-GS3" secondAttribute="leading" id="Fhh-sj-zp6"/>
                             <constraint firstItem="xcN-oj-vey" firstAttribute="trailing" secondItem="swV-uy-GS3" secondAttribute="trailing" id="IaG-iZ-jBw"/>
                             <constraint firstItem="hwb-He-amC" firstAttribute="trailing" secondItem="swV-uy-GS3" secondAttribute="trailing" id="JmJ-AK-Vwq"/>
@@ -241,6 +242,7 @@
                         <outlet property="btnSignIn" destination="vla-32-uxw" id="OzZ-3p-zvA"/>
                         <outlet property="btnSignInFacebook" destination="Svg-dl-IFJ" id="lwm-lg-DM9"/>
                         <outlet property="btnSignInGoogle" destination="bjY-og-5yV" id="5ok-53-5tL"/>
+                        <outlet property="constaint_lblWelcom_top" destination="Oij-04-uAP" id="8yg-c2-rRO"/>
                         <outlet property="lblError" destination="CSf-Rt-0aO" id="kRg-gf-1UW"/>
                         <outlet property="txtEmail" destination="QJF-wh-BYA" id="Vcl-FL-e6x"/>
                         <outlet property="txtPassword" destination="3ao-SD-dJB" id="Uwx-b2-pP0"/>
