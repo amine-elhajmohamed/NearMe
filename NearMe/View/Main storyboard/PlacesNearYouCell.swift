@@ -96,4 +96,17 @@ extension PlacesNearYouTableViewCell: UICollectionViewDelegate, UICollectionView
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: false)
+        
+        if let mainTabBarController = MainTabViewController.ref, let mapVC = mainTabBarController.viewControllers?[MainTabViewController.MAP_VC_INDEX] as? MapViewController {
+            MainTabViewController.ref?.selectedIndex = MainTabViewController.MAP_VC_INDEX
+            
+            let place = places[indexPath.item]
+            mapVC.zoomTheMapToAPlace(place: place)
+            mapVC.openPlaceDetails(place: place)
+        }
+        
+
+    }
 }

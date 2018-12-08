@@ -90,6 +90,14 @@ class MapViewController: UIViewController {
         mapView.setRegion(placeRegion, animated: true)
     }
     
+    func openPlaceDetails(place: Place){
+        if let placeMapDetailsVC = storyboard?.instantiateViewController(withIdentifier: "PlaceMapDetailsVC") as? PlaceMapDetailsViewController {
+            placeMapDetailsVC.presentingMapView = self
+            placeMapDetailsVC.place = place
+            present(placeMapDetailsVC, animated: false, completion: nil)
+        }
+    }
+    
     func getDirectionToPlace(place: Place, onComplition: @escaping ((Bool)->())) {
         guard let currentUserLocation = locationManager.location?.coordinate else {
             return
@@ -144,11 +152,7 @@ extension MapViewController: MKMapViewDelegate {
             return
         }
         
-        if let placeMapDetailsVC = storyboard?.instantiateViewController(withIdentifier: "PlaceMapDetailsVC") as? PlaceMapDetailsViewController {
-            placeMapDetailsVC.presentingMapView = self
-            placeMapDetailsVC.place = annotation.place
-            present(placeMapDetailsVC, animated: false, completion: nil)
-        }
+        openPlaceDetails(place: annotation.place)
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
