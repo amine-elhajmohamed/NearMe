@@ -14,6 +14,7 @@
 		331B0A5D21BB2A6D00B4F4D3 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331B0A5C21BB2A6D00B4F4D3 /* MainTabViewController.swift */; };
 		331B0A5F21BB2D8100B4F4D3 /* ToDo in Resources */ = {isa = PBXBuildFile; fileRef = 331B0A5E21BB2D8100B4F4D3 /* ToDo */; };
 		331B0A6121BB39F500B4F4D3 /* AddNewPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331B0A6021BB39F500B4F4D3 /* AddNewPlaceViewController.swift */; };
+		3341E5C121BC78F3003ADE68 /* AppDescription.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 3341E5C021BC78F3003ADE68 /* AppDescription.pdf */; };
 		335BA06C21BA8FCA006D59C1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335BA06B21BA8FCA006D59C1 /* MapViewController.swift */; };
 		335BA06E21BA9598006D59C1 /* PlaceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335BA06D21BA9598006D59C1 /* PlaceAnnotation.swift */; };
 		335BA07021BAA375006D59C1 /* PlaceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335BA06F21BAA375006D59C1 /* PlaceUtils.swift */; };
@@ -47,6 +48,7 @@
 		331B0A5C21BB2A6D00B4F4D3 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		331B0A5E21BB2D8100B4F4D3 /* ToDo */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToDo; sourceTree = "<group>"; };
 		331B0A6021BB39F500B4F4D3 /* AddNewPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPlaceViewController.swift; sourceTree = "<group>"; };
+		3341E5C021BC78F3003ADE68 /* AppDescription.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = AppDescription.pdf; sourceTree = "<group>"; };
 		335BA06B21BA8FCA006D59C1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		335BA06D21BA9598006D59C1 /* PlaceAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAnnotation.swift; sourceTree = "<group>"; };
 		335BA06F21BAA375006D59C1 /* PlaceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceUtils.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				33D094AF21B961EF00D9E7A7 /* GoogleService-Info.plist */,
 				3379A36721B960F300C4BF8B /* Info.plist */,
 				331B0A5E21BB2D8100B4F4D3 /* ToDo */,
+				3341E5C021BC78F3003ADE68 /* AppDescription.pdf */,
 			);
 			path = NearMe;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 				331B0A5F21BB2D8100B4F4D3 /* ToDo in Resources */,
 				33D094B021B961EF00D9E7A7 /* GoogleService-Info.plist in Resources */,
 				3379A36321B960F300C4BF8B /* Assets.xcassets in Resources */,
+				3341E5C121BC78F3003ADE68 /* AppDescription.pdf in Resources */,
 				33E3836E21BBF070000CB16C /* PlaceRatedTableViewCell.xib in Resources */,
 				3379A36121B960F300C4BF8B /* Main.storyboard in Resources */,
 				33E3836A21BBD617000CB16C /* PlaceNearYouCollectionViewCell.xib in Resources */,
@@ -519,7 +523,10 @@
 				DEVELOPMENT_TEAM = GXL4M9LBQ5;
 				INFOPLIST_FILE = NearMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.amine.NearMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -536,7 +543,10 @@
 				DEVELOPMENT_TEAM = GXL4M9LBQ5;
 				INFOPLIST_FILE = NearMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.amine.NearMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
