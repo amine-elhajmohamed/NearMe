@@ -76,6 +76,10 @@ class NearMeViewController: UIViewController {
                     self.tableView.insertRows(at: [IndexPath(row: 1, section: 0)], with: .none)
                 }
                 
+                if deletions.count != 0 && self.myRatesPlaces.count == 0 && self.tableView.cellForRow(at: IndexPath(row: 1, section: 0)) != nil {
+                    self.tableView.deleteRows(at: [IndexPath(row: 1, section: 0)], with: .none)
+                }
+                
                 self.tableView.insertRows(at: insertions.map({ (value: Int) -> IndexPath in
                     return IndexPath(row: value+2, section: 0) //+2 because 2 cell are reserver for Places near you and for the title of this section
                 }), with: .none)
