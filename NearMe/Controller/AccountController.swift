@@ -8,6 +8,8 @@
 
 import Foundation
 import FirebaseAuth
+import GoogleSignIn
+import FBSDKLoginKit
 
 class AccountController {
     
@@ -86,6 +88,9 @@ class AccountController {
     func logoutCurrentUser(onComplition: @escaping ((LogoutResult)->())){
         do {
             try Auth.auth().signOut()
+            GIDSignIn.sharedInstance()?.signOut()
+            FBSDKLoginManager().logOut()
+            
             onComplition(.success)
         }catch (_) {
             onComplition(.unknownError)

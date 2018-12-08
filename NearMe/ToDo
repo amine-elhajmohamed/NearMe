@@ -1,14 +1,5 @@
 Images assets
 
-//observe rating change
-
-GIDSignIn.sharedInstance()?.signOut()
-AccountController.shared.logoutCurrentUser { (_) in
-self.dismiss(animated: true, completion: nil)
-}
-
-logout -> main tab bar ref = nil
-
 
 <key>NSAppTransportSecurity</key>
 <dict>

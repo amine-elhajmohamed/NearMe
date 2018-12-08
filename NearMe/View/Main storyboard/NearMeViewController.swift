@@ -7,11 +7,19 @@
 //
 
 import UIKit
+import FirebaseAuth
 import RealmSwift
+import SVProgressHUD
 
 class NearMeViewController: UIViewController {
 
+    @IBOutlet weak var btnLogout: UIButton!
+    
+    @IBOutlet weak var lblEmail: UILabel!
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var topView: UIView!
     
     private static let SECTION_NEAR_ME = 0
     private static let SECTION_PLACES_RATED_TITLE = 1
@@ -32,11 +40,17 @@ class NearMeViewController: UIViewController {
     //MARK:- View configurations
     
     private func configureView(){
+        topView.layer.shadowColor = UIColor.black.cgColor
+        topView.layer.shadowOffset = CGSize(width: 0, height: 3)
+        topView.layer.shadowOpacity = 0.3
+        
         tableView.delegate = self
         tableView.dataSource = self
         
         tableView.register(UINib(nibName: "PlacesNearYouTableViewCell", bundle: nil), forCellReuseIdentifier: "PlacesNearYouTableViewCell")
         tableView.register(UINib(nibName: "PlaceRatedTableViewCell", bundle: nil), forCellReuseIdentifier: "PlaceRatedTableViewCell")
+        
+        lblEmail.text = Auth.auth().currentUser?.email ?? "Unknown User"
         
         myRatesPlaces = realm.objects(Place.self).filter("myRating > 0").sorted(byKeyPath: "myRating", ascending: false)
         
@@ -72,6 +86,30 @@ class NearMeViewController: UIViewController {
     deinit {
         notificationToken?.invalidate()
     }
+    
+    
+    //MARK:- Actions
+    
+    @IBAction func btnClicked(_ sender: UIButton) {
+        switch sender {
+        case btnLogout:
+            AccountController.shared.logoutCurrentUser { [unowned self] (result: LogoutResult) in
+                switch result {
+                case .success:
+                    self.dismiss(animated: true, completion: nil)
+                    MainTabViewController.ref = nil
+                    try! self.realm.write {
+                        self.realm.deleteAll()
+                    }
+                case .unknownError:
+                    SVProgressHUD.showError(withStatus: "An unknown error occurred, please try again later.")
+                }
+            }
+        default:
+            break
+        }
+    }
+    
 }
 
 //MARK:- extension UITableViewDelegate, UITableViewDataSource
