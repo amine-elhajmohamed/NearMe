@@ -79,6 +79,7 @@ class PlaceMapDetailsViewController: UIViewController {
             case .change(_):
                 self.lblRating.text = String(format: "%.01f", self.place.rating)
                 self.lblRated.text = "\(self.place.totalRates) rates"
+                self.startsRating.value = CGFloat(self.place.myRating)
             default:
                 break
             }

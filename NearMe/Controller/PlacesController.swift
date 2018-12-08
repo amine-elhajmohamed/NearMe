@@ -29,59 +29,12 @@ class PlacesController {
         let database = Database.database().reference().child("locations")
         
         database.observe(.childAdded) { (snapshot: DataSnapshot) in
-            
-            if let data = snapshot.value as? [String: AnyObject], let name = data["name"] as? String,
-                let latitude = data["lat"] as? Double, let longitude = data["long"] as? Double, let type = data["type"] as? String {
-                
-                let identifier = snapshot.key
-                
-                var totalRates = 0
-                var totalRatesCount = 0
-                var myRating = 0
-                
-                if let rates = data["rates"] as? [String: Int] {
-                    totalRatesCount = rates.count
-                    
-                    for element in rates {
-                        totalRates += element.value
-                    }
-                    
-                    if let currentUserRating = rates[Auth.auth().currentUser?.uid ?? ""] {
-                        myRating = currentUserRating
-                    }
-                }
-                
-                var place: Place! = nil
-                
-                let setPlaceProprities = {
-                    place.name = name
-                    place.latitude = latitude
-                    place.longitude = longitude
-                    place._type = type
-                    place.rating = totalRatesCount == 0 ? 0: Double(totalRates / totalRatesCount)
-                    place.totalRates = totalRatesCount
-                    place.myRating = myRating
-                }
-                
-                place = self.realm.object(ofType: Place.self, forPrimaryKey: identifier)
-                
-                if place != nil {
-                    try! self.realm.write {
-                        setPlaceProprities()
-                    }
-                } else {
-                    place = Place()
-                    place.identifier = snapshot.key
-                    setPlaceProprities()
-                    try! self.realm.write {
-                        self.realm.add(place)
-                    }
-                }
-                
-            }
-            
+            self.parsePlaceFromSnapshot(snapshot: snapshot)
         }
         
+        database.observe(.childChanged) { (snapshot: DataSnapshot) in
+            self.parsePlaceFromSnapshot(snapshot: snapshot)
+        }
     }
     
     func createNewPlace(name: String, type: String, latitude: Double, longitude: Double, onComplition: @escaping ((CreateNewPlaceResult)->())){
@@ -115,6 +68,59 @@ class PlacesController {
             }
             
             place.myRating = rate
+        }
+    }
+    
+    
+    private func parsePlaceFromSnapshot(snapshot: DataSnapshot){
+        if let data = snapshot.value as? [String: AnyObject], let name = data["name"] as? String,
+            let latitude = data["lat"] as? Double, let longitude = data["long"] as? Double, let type = data["type"] as? String {
+            
+            let identifier = snapshot.key
+            
+            var totalRates = 0
+            var totalRatesCount = 0
+            var myRating = 0
+            
+            if let rates = data["rates"] as? [String: Int] {
+                totalRatesCount = rates.count
+                
+                for element in rates {
+                    totalRates += element.value
+                }
+                
+                if let currentUserRating = rates[Auth.auth().currentUser?.uid ?? ""] {
+                    myRating = currentUserRating
+                }
+            }
+            
+            var place: Place! = nil
+            
+            let setPlaceProprities = {
+                place.name = name
+                place.latitude = latitude
+                place.longitude = longitude
+                place._type = type
+                place.rating = totalRatesCount == 0 ? 0 : Double(totalRates / totalRatesCount)
+                place.totalRates = totalRatesCount
+                place.myRating = myRating
+            }
+            
+            place = self.realm.object(ofType: Place.self, forPrimaryKey: identifier)
+            
+            if place != nil {
+                try! self.realm.write {
+                    setPlaceProprities()
+                }
+            } else {
+                place = Place()
+                place.identifier = snapshot.key
+                setPlaceProprities()
+                try! self.realm.write {
+                    self.realm.add(place)
+                }
+            }
+            
         }
     }
 }
