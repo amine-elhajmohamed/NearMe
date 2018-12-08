@@ -66,10 +66,10 @@ class PlacesController {
         
         try! realm.write {
             if place.myRating == 0 {
-                place.rating = ((place.rating * Double(place.totalRates)) + Double(rate)) / Double(place.totalRates + 1)
+                place.rating = Double((place.rating * Double(place.totalRates)) + Double(rate)) / Double(place.totalRates + 1)
                 place.totalRates += 1
             } else {
-                place.rating = ((place.rating * Double(place.totalRates)) + Double(rate - place.myRating)) / Double(place.totalRates)
+                place.rating = Double((place.rating * Double(place.totalRates)) + Double(rate - place.myRating)) / Double(place.totalRates)
             }
             
             place.myRating = rate
@@ -106,7 +106,7 @@ class PlacesController {
                 place.latitude = latitude
                 place.longitude = longitude
                 place._type = type
-                place.rating = totalRatesCount == 0 ? 0 : Double(totalRates / totalRatesCount)
+                place.rating = totalRatesCount == 0 ? 0 : Double(totalRates) / Double(totalRatesCount)
                 place.totalRates = totalRatesCount
                 place.myRating = myRating
             }
