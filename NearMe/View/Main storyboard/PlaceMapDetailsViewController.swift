@@ -10,10 +10,11 @@ import UIKit
 import HCSStarRatingView
 import RealmSwift
 import CoreLocation
+import SVProgressHUD
 
 class PlaceMapDetailsViewController: UIViewController {
 
-    @IBOutlet weak var btnDirection: UIButton!
+    @IBOutlet weak var btnDirection: LoadingButton!
     @IBOutlet weak var btnClose: UIButton!
     
     @IBOutlet weak var lblName: UILabel!
@@ -155,8 +156,20 @@ class PlaceMapDetailsViewController: UIViewController {
                 return
             }
             
-            presentingMapView?.getDirectionToPlace(place: place)
-            dismissView()
+            view.isUserInteractionEnabled = false
+            btnDirection.startAnimating()
+            
+            presentingMapView?.getDirectionToPlace(place: place, onComplition: { [weak self] (success: Bool) in
+                
+                self?.view.isUserInteractionEnabled = true
+                self?.btnDirection.stopAnimating {
+                    if success {
+                        self?.dismissView()
+                    } else {
+                        SVProgressHUD.showError(withStatus: "An error occurred\n\nPlease check your internet connection and try again.")
+                    }
+                }
+            })
         case btnClose:
             dismissView()
         default:

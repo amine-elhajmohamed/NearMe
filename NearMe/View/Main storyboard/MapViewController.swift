@@ -85,7 +85,7 @@ class MapViewController: UIViewController {
         }
     }
     
-    func getDirectionToPlace(place: Place) {
+    func getDirectionToPlace(place: Place, onComplition: @escaping ((Bool)->())) {
         guard let currentUserLocation = locationManager.location?.coordinate else {
             return
         }
@@ -99,12 +99,17 @@ class MapViewController: UIViewController {
         let directions = MKDirections(request: request)
 
         directions.calculate { [unowned self] response, error in
-            guard let unwrappedResponse = response else { return }
+            guard let unwrappedResponse = response else {
+                onComplition(false)
+                return
+            }
             
             for route in unwrappedResponse.routes {
                 self.mapView.addOverlay(route.polyline)
                 self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
             }
+            
+            onComplition(true)
         }
     }
     

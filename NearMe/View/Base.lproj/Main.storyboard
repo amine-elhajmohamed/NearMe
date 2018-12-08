@@ -855,7 +855,7 @@
                                             <action selector="btnClicked:" destination="jdK-L1-jkJ" eventType="touchUpInside" id="qra-B4-kae"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F74-of-3jD" customClass="CustomButton" customModule="NearMe" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F74-of-3jD" customClass="LoadingButton" customModule="NearMe" customModuleProvider="target">
                                         <rect key="frame" x="112.5" y="209.5" width="150" height="40"/>
                                         <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
