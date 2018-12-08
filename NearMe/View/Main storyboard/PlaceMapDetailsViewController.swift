@@ -9,6 +9,7 @@
 import UIKit
 import HCSStarRatingView
 import RealmSwift
+import CoreLocation
 
 class PlaceMapDetailsViewController: UIViewController {
 
@@ -27,9 +28,11 @@ class PlaceMapDetailsViewController: UIViewController {
     
     @IBOutlet weak var startsRating: HCSStarRatingView!
     
-    private var notificationToken : NotificationToken?
+    var presentingMapView: MapViewController?
     
     var place: Place!
+    
+    private var notificationToken : NotificationToken?
     
     private var isFirstTimeAppearing = true
     
@@ -129,7 +132,31 @@ class PlaceMapDetailsViewController: UIViewController {
     @IBAction func btnClicked(_ sender: UIButton) {
         switch sender {
         case btnDirection:
-            break
+            guard CLLocationManager.authorizationStatus() == .authorizedWhenInUse else {
+                let alertVC = UIAlertController(title: "Allow GPS", message: "In order to use direction, the app need to access the GPS.\n Please enabled GPS access for the app.", preferredStyle: .alert)
+                alertVC.addAction(UIAlertAction(title: "Open settings", style: .default, handler: { (_) in
+                    guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                        return
+                    }
+                    
+                    if UIApplication.shared.canOpenURL(settingsUrl) {
+                        UIApplication.shared.open(settingsUrl)
+                    }
+                }))
+                alertVC.addAction(UIAlertAction(title: "Close", style: .cancel, handler: nil))
+                present(alertVC, animated: true, completion: nil)
+                return
+            }
+            
+            guard CLLocationManager().location != nil else {
+                let alertVC = UIAlertController(title: "Failed to get your possition", message: "An error has been occured and couldn't detect your postion, please try again later.", preferredStyle: .alert)
+                alertVC.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+                present(alertVC, animated: true, completion: nil)
+                return
+            }
+            
+            presentingMapView?.getDirectionToPlace(place: place)
+            dismissView()
         case btnClose:
             dismissView()
         default:

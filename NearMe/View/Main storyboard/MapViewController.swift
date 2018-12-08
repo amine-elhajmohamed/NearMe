@@ -20,6 +20,21 @@ class MapViewController: UIViewController {
     
     var notificationToken: NotificationToken? = nil
     
+    private let locationManager = CLLocationManager()
+    
+    private var isFirstTimeAppearing = true
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if isFirstTimeAppearing {
+            isFirstTimeAppearing = false
+            
+            requestGpsPermission()
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +45,7 @@ class MapViewController: UIViewController {
     
     private func configureView(){
         mapView.delegate = self
+        mapView.showsUserLocation = true
         
         places = realm.objects(Place.self)
         
@@ -63,6 +79,35 @@ class MapViewController: UIViewController {
     
     //MARK:- Actions
     
+    private func requestGpsPermission(){
+        if CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
+            locationManager.requestWhenInUseAuthorization()
+        }
+    }
+    
+    func getDirectionToPlace(place: Place) {
+        guard let currentUserLocation = locationManager.location?.coordinate else {
+            return
+        }
+        
+        let request = MKDirections.Request()
+        request.source = MKMapItem(placemark: MKPlacemark(coordinate: currentUserLocation, addressDictionary: nil))
+        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longitude), addressDictionary: nil))
+        request.requestsAlternateRoutes = false
+        request.transportType = .automobile
+        
+        let directions = MKDirections(request: request)
+
+        directions.calculate { [unowned self] response, error in
+            guard let unwrappedResponse = response else { return }
+            
+            for route in unwrappedResponse.routes {
+                self.mapView.addOverlay(route.polyline)
+                self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
+            }
+        }
+    }
+    
     @IBAction func mapViewLongPressed(_ sender: UILongPressGestureRecognizer) {
         
         if sender.state == .began {
@@ -88,6 +133,7 @@ extension MapViewController: MKMapViewDelegate {
         }
         
         if let placeMapDetailsVC = storyboard?.instantiateViewController(withIdentifier: "PlaceMapDetailsVC") as? PlaceMapDetailsViewController {
+            placeMapDetailsVC.presentingMapView = self
             placeMapDetailsVC.place = annotation.place
             present(placeMapDetailsVC, animated: false, completion: nil)
         }
@@ -110,6 +156,12 @@ extension MapViewController: MKMapViewDelegate {
         annotationView!.image = PlaceUtils.shared.getPlaceIconForMarker(type: annotation.place.type)
         
         return annotationView
+    }
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(polyline: overlay as! MKPolyline)
+        renderer.strokeColor = UIColor.blue
+        return renderer
     }
     
 }
