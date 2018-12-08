@@ -1,7 +1,5 @@
 Images assets
 
-notificationToken?.invalidate() when logout
-
 //observe rating change
 
 GIDSignIn.sharedInstance()?.signOut()

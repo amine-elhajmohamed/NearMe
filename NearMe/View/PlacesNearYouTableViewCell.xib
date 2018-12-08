@@ -35,20 +35,29 @@
                     <color key="textColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No place found within 100 Km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hV-xV-Q2S">
+                    <rect key="frame" x="132" y="85.5" width="221.5" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                    <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="bfn-Pr-6rS" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="26S-3c-6XW"/>
+                <constraint firstItem="3hV-xV-Q2S" firstAttribute="centerY" secondItem="bfn-Pr-6rS" secondAttribute="centerY" id="5HZ-ZV-9LM"/>
                 <constraint firstItem="bfn-Pr-6rS" firstAttribute="top" secondItem="CGk-xj-qiA" secondAttribute="bottom" constant="10" id="Dhg-bQ-dzm"/>
                 <constraint firstItem="CGk-xj-qiA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="RYv-8J-hg5"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bfn-Pr-6rS" secondAttribute="trailing" id="WJz-Dt-dr7"/>
                 <constraint firstItem="bfn-Pr-6rS" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="XsW-x4-N65"/>
                 <constraint firstItem="CGk-xj-qiA" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="bdT-zU-2sx"/>
+                <constraint firstItem="3hV-xV-Q2S" firstAttribute="centerX" secondItem="bfn-Pr-6rS" secondAttribute="centerX" id="qz0-bG-cwp"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="collectionView" destination="bfn-Pr-6rS" id="nFf-yc-3lm"/>
+                <outlet property="lblError" destination="3hV-xV-Q2S" id="U9N-Ow-7qo"/>
             </connections>
             <point key="canvasLocation" x="226.40000000000001" y="29.23538230884558"/>
         </view>

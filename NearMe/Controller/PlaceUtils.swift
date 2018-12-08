@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class PlaceUtils {
     
@@ -40,6 +41,10 @@ class PlaceUtils {
         case .park:
             return UIImage(named: "RestaurantMarkerIcon")
         }
+    }
+    
+    func getDistanceBetween(location1: CLLocation, location2: CLLocation) -> Int{
+        return Int(location1.distance(from: location2))
     }
     
 }
