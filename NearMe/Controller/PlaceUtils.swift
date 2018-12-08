@@ -35,9 +35,9 @@ class PlaceUtils {
         case .kidsEntertainment:
             return UIImage(named: "KidsEntertainmentMarkerIcon")
         case .restaurant:
-            return UIImage(named: "ParkMarkerIcon")
-        case .park:
             return UIImage(named: "RestaurantMarkerIcon")
+        case .park:
+            return UIImage(named: "ParkMarkerIcon")
         }
     }
     
