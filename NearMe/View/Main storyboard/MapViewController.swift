@@ -133,6 +133,8 @@ class MapViewController: UIViewController {
 extension MapViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        mapView.deselectAnnotation(view.annotation, animated: false)
+        
         guard let annotation = view.annotation as? PlaceAnnotation else {
             return
         }
