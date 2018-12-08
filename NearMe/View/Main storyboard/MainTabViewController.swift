@@ -13,7 +13,7 @@ class MainTabViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        LocationsController.shared.start()
+        PlacesController.shared.start()
     }
 
 }

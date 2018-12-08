@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		330C237121B9D5C2009C777D /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330C237021B9D5C2009C777D /* MainNavigationViewController.swift */; };
-		331B0A5921BB048B00B4F4D3 /* LocationsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331B0A5821BB048B00B4F4D3 /* LocationsController.swift */; };
+		331B0A5921BB048B00B4F4D3 /* PlacesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331B0A5821BB048B00B4F4D3 /* PlacesController.swift */; };
 		331B0A5B21BB18C900B4F4D3 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331B0A5A21BB18C900B4F4D3 /* Place.swift */; };
 		331B0A5D21BB2A6D00B4F4D3 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331B0A5C21BB2A6D00B4F4D3 /* MainTabViewController.swift */; };
 		331B0A5F21BB2D8100B4F4D3 /* ToDo in Resources */ = {isa = PBXBuildFile; fileRef = 331B0A5E21BB2D8100B4F4D3 /* ToDo */; };
+		331B0A6121BB39F500B4F4D3 /* AddNewPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331B0A6021BB39F500B4F4D3 /* AddNewPlaceViewController.swift */; };
 		335BA06C21BA8FCA006D59C1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335BA06B21BA8FCA006D59C1 /* MapViewController.swift */; };
 		335BA06E21BA9598006D59C1 /* PlaceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335BA06D21BA9598006D59C1 /* PlaceAnnotation.swift */; };
 		335BA07021BAA375006D59C1 /* PlaceUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335BA06F21BAA375006D59C1 /* PlaceUtils.swift */; };
@@ -32,10 +33,11 @@
 /* Begin PBXFileReference section */
 		073FE6881F0F294EB85A0C67 /* Pods-NearMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-NearMe/Pods-NearMe.release.xcconfig"; sourceTree = "<group>"; };
 		330C237021B9D5C2009C777D /* MainNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationViewController.swift; sourceTree = "<group>"; };
-		331B0A5821BB048B00B4F4D3 /* LocationsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsController.swift; sourceTree = "<group>"; };
+		331B0A5821BB048B00B4F4D3 /* PlacesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesController.swift; sourceTree = "<group>"; };
 		331B0A5A21BB18C900B4F4D3 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		331B0A5C21BB2A6D00B4F4D3 /* MainTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
 		331B0A5E21BB2D8100B4F4D3 /* ToDo */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToDo; sourceTree = "<group>"; };
+		331B0A6021BB39F500B4F4D3 /* AddNewPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewPlaceViewController.swift; sourceTree = "<group>"; };
 		335BA06B21BA8FCA006D59C1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		335BA06D21BA9598006D59C1 /* PlaceAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAnnotation.swift; sourceTree = "<group>"; };
 		335BA06F21BAA375006D59C1 /* PlaceUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceUtils.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				33D094B121B9627A00D9E7A7 /* LoginViewController.swift */,
 				33D094BC21B998EB00D9E7A7 /* SignUpViewController.swift */,
 				335BA06B21BA8FCA006D59C1 /* MapViewController.swift */,
+				331B0A6021BB39F500B4F4D3 /* AddNewPlaceViewController.swift */,
 			);
 			path = "Main storyboard";
 			sourceTree = "<group>";
@@ -119,7 +122,7 @@
 				335BA06F21BAA375006D59C1 /* PlaceUtils.swift */,
 				33D094B821B982C800D9E7A7 /* StringUtils.swift */,
 				33D094B621B981A600D9E7A7 /* AccountController.swift */,
-				331B0A5821BB048B00B4F4D3 /* LocationsController.swift */,
+				331B0A5821BB048B00B4F4D3 /* PlacesController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -337,9 +340,10 @@
 				335BA06C21BA8FCA006D59C1 /* MapViewController.swift in Sources */,
 				335BA07021BAA375006D59C1 /* PlaceUtils.swift in Sources */,
 				3379A35C21B960F300C4BF8B /* AppDelegate.swift in Sources */,
-				331B0A5921BB048B00B4F4D3 /* LocationsController.swift in Sources */,
+				331B0A5921BB048B00B4F4D3 /* PlacesController.swift in Sources */,
 				330C237121B9D5C2009C777D /* MainNavigationViewController.swift in Sources */,
 				33D094B521B97C9600D9E7A7 /* CustomButton.swift in Sources */,
+				331B0A6121BB39F500B4F4D3 /* AddNewPlaceViewController.swift in Sources */,
 				33D094B721B981A600D9E7A7 /* AccountController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

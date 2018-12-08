@@ -60,6 +60,22 @@ class MapViewController: UIViewController {
     deinit {
         notificationToken?.invalidate()
     }
+    
+    //MARK:- Actions
+    
+    @IBAction func mapViewLongPressed(_ sender: UILongPressGestureRecognizer) {
+        
+        if sender.state == .began {
+            let touchPoint = sender.location(in: mapView)
+            let coordinates = mapView.convert(touchPoint, toCoordinateFrom: mapView)
+            
+            let addNewPlaceVC = storyboard?.instantiateViewController(withIdentifier: "AddNewPlaceVC") as! AddNewPlaceViewController
+            addNewPlaceVC.latitude = coordinates.latitude
+            addNewPlaceVC.longitude = coordinates.longitude
+            present(addNewPlaceVC, animated: false, completion: nil)
+        }
+        
+    }
 }
 
 //MARK:- extension MKMapViewDelegate

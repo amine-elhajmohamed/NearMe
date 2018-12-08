@@ -1,3 +1,23 @@
 Images assets
 
 notificationToken?.invalidate() when logout
+
+
+
+GIDSignIn.sharedInstance()?.signOut()
+AccountController.shared.logoutCurrentUser { (_) in
+self.dismiss(animated: true, completion: nil)
+}
+
+
+
+
+<key>NSAppTransportSecurity</key>
+<dict>
+<key>NSAllowsArbitraryLoads</key>
+<true/>
+<key>NSAllowsArbitraryLoadsForMedia</key>
+<true/>
+<key>NSAllowsArbitraryLoadsInWebContent</key>
+<true/>
+</dict>

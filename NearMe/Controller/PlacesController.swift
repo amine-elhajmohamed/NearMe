@@ -1,5 +1,5 @@
 //
-//  LocationsController.swift
+//  PlacesController.swift
 //  NearMe
 //
 //  Created by MedAmine on 12/7/18.
@@ -10,9 +10,9 @@ import Foundation
 import FirebaseDatabase
 import RealmSwift
 
-class LocationsController {
+class PlacesController {
     
-    static let shared = LocationsController()
+    static let shared = PlacesController()
     
     private var isStarted = false
     
@@ -82,4 +82,24 @@ class LocationsController {
         
     }
     
+    
+    func createNewPlace(name: String, type: String, latitude: Double, longitude: Double, onComplition: @escaping ((CreateNewPlaceResult)->())){
+        let database = Database.database().reference().child("locations")
+        
+        let valueToAdd: [String: Any] = ["name": name, "type": type, "lat": latitude, "long": longitude, "rating": 0]
+        
+        database.childByAutoId().setValue(valueToAdd) { (error: Error?, ref: DatabaseReference) in
+            if error == nil {
+                onComplition(.success)
+            } else {
+                onComplition(.failed)
+            }
+        }
+    }
+}
+
+
+enum CreateNewPlaceResult {
+    case success
+    case failed
 }
