@@ -17,7 +17,6 @@ class PlaceMapDetailsViewController: UIViewController {
     @IBOutlet weak var btnDirection: LoadingButton!
     @IBOutlet weak var btnClose: UIButton!
     @IBOutlet weak var btnZoomMap: UIButton!
-    @IBOutlet weak var btnShare: UIButton!
     
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblRating: UILabel!
@@ -179,8 +178,6 @@ class PlaceMapDetailsViewController: UIViewController {
         case btnZoomMap:
             presentingMapView?.zoomTheMapToAPlace(place: place)
             dismissView()
-        case btnShare:
-            break
         case btnClose:
             dismissView()
         default:

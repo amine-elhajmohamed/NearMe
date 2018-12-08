@@ -33,6 +33,8 @@
 		33E3836821BBD2F2000CB16C /* NearMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E3836721BBD2F2000CB16C /* NearMeViewController.swift */; };
 		33E3836A21BBD617000CB16C /* PlaceNearYouCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33E3836921BBD617000CB16C /* PlaceNearYouCollectionViewCell.xib */; };
 		33E3836C21BBD629000CB16C /* PlaceNearYouCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E3836B21BBD629000CB16C /* PlaceNearYouCollectionViewCell.swift */; };
+		33E3836E21BBF070000CB16C /* PlaceRatedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33E3836D21BBF070000CB16C /* PlaceRatedTableViewCell.xib */; };
+		33E3837021BBF080000CB16C /* PlaceRatedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E3836F21BBF080000CB16C /* PlaceRatedTableViewCell.swift */; };
 		781EAB703785F10B3403942E /* Pods_NearMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9939348A8A853C5022EE3321 /* Pods_NearMe.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +68,8 @@
 		33E3836721BBD2F2000CB16C /* NearMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearMeViewController.swift; sourceTree = "<group>"; };
 		33E3836921BBD617000CB16C /* PlaceNearYouCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceNearYouCollectionViewCell.xib; sourceTree = "<group>"; };
 		33E3836B21BBD629000CB16C /* PlaceNearYouCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceNearYouCollectionViewCell.swift; sourceTree = "<group>"; };
+		33E3836D21BBF070000CB16C /* PlaceRatedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceRatedTableViewCell.xib; sourceTree = "<group>"; };
+		33E3836F21BBF080000CB16C /* PlaceRatedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceRatedTableViewCell.swift; sourceTree = "<group>"; };
 		8238DD43CBCE12C97C8F86D4 /* Pods-NearMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NearMe/Pods-NearMe.debug.xcconfig"; sourceTree = "<group>"; };
 		9939348A8A853C5022EE3321 /* Pods_NearMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NearMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -95,6 +99,7 @@
 				33E3836721BBD2F2000CB16C /* NearMeViewController.swift */,
 				33E3836521BBD2C4000CB16C /* PlacesNearYouCell.swift */,
 				33E3836B21BBD629000CB16C /* PlaceNearYouCollectionViewCell.swift */,
+				33E3836F21BBF080000CB16C /* PlaceRatedTableViewCell.swift */,
 			);
 			path = "Main storyboard";
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 				3379A35F21B960F300C4BF8B /* Main.storyboard */,
 				33E3836321BBD279000CB16C /* PlacesNearYouTableViewCell.xib */,
 				33E3836921BBD617000CB16C /* PlaceNearYouCollectionViewCell.xib */,
+				33E3836D21BBF070000CB16C /* PlaceRatedTableViewCell.xib */,
 				330C236D21B9D1B5009C777D /* Main storyboard */,
 			);
 			path = View;
@@ -256,6 +262,7 @@
 				331B0A5F21BB2D8100B4F4D3 /* ToDo in Resources */,
 				33D094B021B961EF00D9E7A7 /* GoogleService-Info.plist in Resources */,
 				3379A36321B960F300C4BF8B /* Assets.xcassets in Resources */,
+				33E3836E21BBF070000CB16C /* PlaceRatedTableViewCell.xib in Resources */,
 				3379A36121B960F300C4BF8B /* Main.storyboard in Resources */,
 				33E3836A21BBD617000CB16C /* PlaceNearYouCollectionViewCell.xib in Resources */,
 				33E3836421BBD279000CB16C /* PlacesNearYouTableViewCell.xib in Resources */,
@@ -362,6 +369,7 @@
 				335BA06C21BA8FCA006D59C1 /* MapViewController.swift in Sources */,
 				335BA07021BAA375006D59C1 /* PlaceUtils.swift in Sources */,
 				33E3836821BBD2F2000CB16C /* NearMeViewController.swift in Sources */,
+				33E3837021BBF080000CB16C /* PlaceRatedTableViewCell.swift in Sources */,
 				33E3836621BBD2C4000CB16C /* PlacesNearYouCell.swift in Sources */,
 				3379A35C21B960F300C4BF8B /* AppDelegate.swift in Sources */,
 				331B0A5921BB048B00B4F4D3 /* PlacesController.swift in Sources */,
