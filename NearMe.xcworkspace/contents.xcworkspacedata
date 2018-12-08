@@ -5,6 +5,9 @@
       location = "group:NearMe.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:AppDescription.pdf">
+   </FileRef>
+   <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

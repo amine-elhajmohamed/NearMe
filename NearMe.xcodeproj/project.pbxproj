@@ -91,6 +91,7 @@
 		3379A34F21B960F300C4BF8B = {
 			isa = PBXGroup;
 			children = (
+				3341E5C021BC78F3003ADE68 /* AppDescription.pdf */,
 				3379A35A21B960F300C4BF8B /* NearMe */,
 				3379A35921B960F300C4BF8B /* Products */,
 				D71D6518C4D76FABD5BBBC86 /* Pods */,
@@ -117,7 +118,6 @@
 				33D094AF21B961EF00D9E7A7 /* GoogleService-Info.plist */,
 				3379A36721B960F300C4BF8B /* Info.plist */,
 				331B0A5E21BB2D8100B4F4D3 /* ToDo */,
-				3341E5C021BC78F3003ADE68 /* AppDescription.pdf */,
 			);
 			path = NearMe;
 			sourceTree = "<group>";
