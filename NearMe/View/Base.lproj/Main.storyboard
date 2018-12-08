@@ -407,7 +407,7 @@
             </objects>
             <point key="canvasLocation" x="1041" y="-340"/>
         </scene>
-        <!--Item-->
+        <!--Map-->
         <scene sceneID="ahp-bY-HR8">
             <objects>
                 <viewController storyboardIdentifier="MapVC" id="SiG-Z8-N1A" customClass="MapViewController" customModule="NearMe" customModuleProvider="target" sceneMemberID="viewController">
@@ -432,7 +432,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="aEE-j2-6Kf"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="SwZ-Db-sqw"/>
+                    <tabBarItem key="tabBarItem" title="Map" id="SwZ-Db-sqw"/>
                     <connections>
                         <outlet property="mapView" destination="LNX-Ec-bX5" id="ugG-wv-wLV"/>
                     </connections>
@@ -444,7 +444,38 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2844" y="680.5097451274363"/>
+            <point key="canvasLocation" x="244" y="573"/>
+        </scene>
+        <!--NearMe-->
+        <scene sceneID="Cvd-2g-uqN">
+            <objects>
+                <viewController storyboardIdentifier="NearMeVC" title="NearMe" id="vR1-7u-YxR" customClass="NearMeViewController" customModule="NearMe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U5b-7v-7yg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="t1c-6A-Nkb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="t1c-6A-Nkb" firstAttribute="leading" secondItem="2IQ-Vu-drZ" secondAttribute="leading" id="DWn-Rq-5ib"/>
+                            <constraint firstItem="t1c-6A-Nkb" firstAttribute="trailing" secondItem="2IQ-Vu-drZ" secondAttribute="trailing" id="WGP-gr-qKC"/>
+                            <constraint firstItem="2IQ-Vu-drZ" firstAttribute="bottom" secondItem="t1c-6A-Nkb" secondAttribute="bottom" id="flS-nr-nhs"/>
+                            <constraint firstItem="t1c-6A-Nkb" firstAttribute="top" secondItem="2IQ-Vu-drZ" secondAttribute="top" id="qeR-cT-Nbp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2IQ-Vu-drZ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="NearMe" id="CUV-fc-o5T"/>
+                    <connections>
+                        <outlet property="tableView" destination="t1c-6A-Nkb" id="ENt-rZ-6vJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jIb-NM-L82" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1183.2" y="1336.2818590704649"/>
         </scene>
         <!--Add New Place View Controller-->
         <scene sceneID="seb-aG-Vmc">
@@ -728,7 +759,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3872.8000000000002" y="663.41829085457277"/>
+            <point key="canvasLocation" x="1276" y="573"/>
         </scene>
         <!--Place Map Details View Controller-->
         <scene sceneID="BIz-qW-c5Z">
@@ -882,20 +913,9 @@
                                             <action selector="btnClicked:" destination="jdK-L1-jkJ" eventType="touchUpInside" id="4lS-Ox-1F5"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecT-UG-Do3">
-                                        <rect key="frame" x="325" y="254.5" width="40" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="P03-0g-lbq"/>
-                                        </constraints>
-                                        <state key="normal" image="ShareSquareIcon"/>
-                                        <connections>
-                                            <action selector="btnClicked:" destination="jdK-L1-jkJ" eventType="touchUpInside" id="dF0-KN-rxk"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="ecT-UG-Do3" secondAttribute="trailing" constant="10" id="36z-py-iBF"/>
                                     <constraint firstAttribute="bottom" secondItem="Uat-is-04e" secondAttribute="bottom" constant="15" id="4Id-GG-DQ1"/>
                                     <constraint firstItem="PkH-53-1kN" firstAttribute="top" secondItem="QJV-BT-FOP" secondAttribute="top" constant="10" id="5UN-Sq-yYY"/>
                                     <constraint firstItem="PkH-53-1kN" firstAttribute="leading" secondItem="QJV-BT-FOP" secondAttribute="leading" constant="20" id="6RY-5l-JDR"/>
@@ -905,12 +925,10 @@
                                     <constraint firstItem="lg3-R7-6mK" firstAttribute="leading" secondItem="PkH-53-1kN" secondAttribute="trailing" constant="10" id="FMw-VP-Hgi"/>
                                     <constraint firstItem="FYh-qk-xdq" firstAttribute="top" secondItem="NC0-Xs-G8U" secondAttribute="bottom" constant="15" id="LgO-fh-u63"/>
                                     <constraint firstItem="lg3-R7-6mK" firstAttribute="centerY" secondItem="PkH-53-1kN" secondAttribute="centerY" id="Tjj-LO-pm3"/>
-                                    <constraint firstAttribute="bottom" secondItem="ecT-UG-Do3" secondAttribute="bottom" constant="10" id="bro-0F-pg9"/>
                                     <constraint firstItem="Uat-is-04e" firstAttribute="top" secondItem="F74-of-3jD" secondAttribute="bottom" constant="10" id="d54-Ng-JHp"/>
                                     <constraint firstItem="F74-of-3jD" firstAttribute="centerX" secondItem="QJV-BT-FOP" secondAttribute="centerX" id="eEd-ZZ-I4i"/>
                                     <constraint firstItem="NC0-Xs-G8U" firstAttribute="top" secondItem="lg3-R7-6mK" secondAttribute="bottom" constant="20" id="mWC-FQ-TLd"/>
                                     <constraint firstItem="Uat-is-04e" firstAttribute="centerX" secondItem="QJV-BT-FOP" secondAttribute="centerX" id="pFR-TC-ziy"/>
-                                    <constraint firstItem="ecT-UG-Do3" firstAttribute="width" secondItem="ecT-UG-Do3" secondAttribute="height" multiplier="1:1" id="pOx-BJ-Mnw"/>
                                     <constraint firstItem="FYh-qk-xdq" firstAttribute="centerX" secondItem="QJV-BT-FOP" secondAttribute="centerX" id="tSi-Iv-nvL"/>
                                 </constraints>
                             </view>
@@ -934,7 +952,6 @@
                         <outlet property="bgView" destination="OtB-Io-Kvf" id="Wt5-V3-ysC"/>
                         <outlet property="btnClose" destination="Uat-is-04e" id="0uy-tk-6Bl"/>
                         <outlet property="btnDirection" destination="F74-of-3jD" id="hDM-m7-QY2"/>
-                        <outlet property="btnShare" destination="ecT-UG-Do3" id="stL-fP-Ef1"/>
                         <outlet property="btnZoomMap" destination="4sh-dH-UPc" id="4c3-H4-pJj"/>
                         <outlet property="img" destination="PkH-53-1kN" id="bgP-bN-WEi"/>
                         <outlet property="lblName" destination="vyN-wb-zYd" id="9ia-72-h3M"/>
@@ -952,7 +969,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4830" y="665"/>
+            <point key="canvasLocation" x="2214" y="573"/>
         </scene>
         <!--Main Tab View Controller-->
         <scene sceneID="zWr-xg-uRZ">
@@ -965,11 +982,12 @@
                     </tabBar>
                     <connections>
                         <segue destination="SiG-Z8-N1A" kind="relationship" relationship="viewControllers" id="VzM-Zt-Ij8"/>
+                        <segue destination="Hfj-tw-kZg" kind="relationship" relationship="viewControllers" id="vt5-nK-7av"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rdP-nk-kBQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1647" y="682"/>
+            <point key="canvasLocation" x="-954" y="574"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="nCs-f5-vQZ">
@@ -1014,6 +1032,25 @@
             </objects>
             <point key="canvasLocation" x="-953" y="-340"/>
         </scene>
+        <!--NearMe-->
+        <scene sceneID="fC9-Qv-WDG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hfj-tw-kZg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="NearMe" id="z26-1v-hvB"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="46Q-m6-qur">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vR1-7u-YxR" kind="relationship" relationship="rootViewController" id="7Q7-EY-Vvw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6ow-H9-znT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="244" y="1336.2818590704649"/>
+        </scene>
     </scenes>
     <resources>
         <image name="BGImage" width="564" height="1002"/>
@@ -1023,7 +1060,6 @@
         <image name="MapSquareIcon" width="409.60000610351562" height="409.60000610351562"/>
         <image name="ParkIcon" width="512" height="512"/>
         <image name="RestaurantIcon" width="512" height="512"/>
-        <image name="ShareSquareIcon" width="409.60000610351562" height="409.60000610351562"/>
         <image name="StarIcon" width="409.60000610351562" height="409.60000610351562"/>
     </resources>
 </document>
