@@ -114,6 +114,7 @@
 				33D094AE21B9614600D9E7A7 /* Model */,
 				33D094AD21B9614000D9E7A7 /* View */,
 				33D094AC21B9613A00D9E7A7 /* Controller */,
+				674D0E0821CC43EF00E5A7FC /* Utils */,
 				3379A36221B960F300C4BF8B /* Assets.xcassets */,
 				33D094AF21B961EF00D9E7A7 /* GoogleService-Info.plist */,
 				3379A36721B960F300C4BF8B /* Info.plist */,
@@ -125,8 +126,6 @@
 		33D094AC21B9613A00D9E7A7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				335BA06F21BAA375006D59C1 /* PlaceUtils.swift */,
-				33D094B821B982C800D9E7A7 /* StringUtils.swift */,
 				33D094B621B981A600D9E7A7 /* AccountController.swift */,
 				331B0A5821BB048B00B4F4D3 /* PlacesController.swift */,
 			);
@@ -173,6 +172,15 @@
 				33D094BA21B9854C00D9E7A7 /* LoadingButton.swift */,
 			);
 			path = UIView;
+			sourceTree = "<group>";
+		};
+		674D0E0821CC43EF00E5A7FC /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				335BA06F21BAA375006D59C1 /* PlaceUtils.swift */,
+				33D094B821B982C800D9E7A7 /* StringUtils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		7A36225FD6CB06A53EB6D87A /* Frameworks */ = {
